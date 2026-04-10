@@ -66,13 +66,13 @@ class Handler:
                 success=False,
                 user_id=user_id,
                 type=command.type.value,
-                timestamp=timestamp_utc
+                timestamp=timestamp
             )
 
         if command.type == CheckType.OUT and not attendance.check_in_time:
             raise CheckOutWithoutCheckInException()
 
-        attendance.set_check(timestamp_utc, command.type)
+        attendance.set_check(timestamp, command.type)
         attendance.updated_at = datetime.now(timezone.utc)
         await self.repository.upsert_work_attendance(user_id, attendance)
 
@@ -80,5 +80,5 @@ class Handler:
             success=True,
             user_id=user_id,
             type=command.type.value,
-            timestamp=timestamp_utc,
+            timestamp=timestamp,
         )
