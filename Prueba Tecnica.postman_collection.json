@@ -1,0 +1,244 @@
+{
+  "info": {
+    "_postman_id": "1aacd344-1070-49f9-882f-582d3c4b2187",
+    "name": "Prueba Tecnica",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "29285661"
+  },
+  "item": [
+    {
+      "name": "create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"first_name\": \"Juan Esteban\",\r\n    \"last_name\": \"Vasco Giraldo\",\r\n    \"email\": \"juan@gmail.com\",\r\n    \"employee_number\": \"EMP345\",\r\n    \"role\": 3,\r\n    \"areas\": [3]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/api/users/",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"first_name\": \"HOLA MUNDO\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/api/users/c5b1523d-8dbb-4241-8e40-3adbabfbbb5b",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "c5b1523d-8dbb-4241-8e40-3adbabfbbb5b"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"test@gmail.com\",\r\n    \"employee_number\": \"12345\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/api/users/login",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get_by_role",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/api/users/by-role/3",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "by-role",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get_by_id",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "TIMESTAMP",
+            "value": "2026-01-20T13:00:00+00:00",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"test@gmail.com\",\r\n    \"employee_number\": \"12345\"\r\n}"
+        },
+        "url": {
+          "raw": "{{host}}/api/users/df249994-1e48-4d2b-b4ea-66fb6304dbfd",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "df249994-1e48-4d2b-b4ea-66fb6304dbfd"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get_by_supervisor_data",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "TIMESTAMP",
+            "value": "2026-04-10T19:23:30+00:00",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "{{host}}/api/users/by-supervisor/1107ee38-b937-4e5f-8a81-28579023bf64?date=2026-04-10",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "by-supervisor",
+            "1107ee38-b937-4e5f-8a81-28579023bf64"
+          ],
+          "query": [
+            {
+              "key": "date",
+              "value": "2026-04-10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "check",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "TIMESTAMP",
+            "value": "2026-01-20T09:00:00+00:00",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"type\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/api/users/c5b1523d-8dbb-4241-8e40-3adbabfbbb5b/check",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "c5b1523d-8dbb-4241-8e40-3adbabfbbb5b",
+            "check"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "host",
+      "value": ""
+    }
+  ]
+}
