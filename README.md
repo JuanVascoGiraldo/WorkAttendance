@@ -71,7 +71,7 @@ npm run dev
 - Backend (API): http://127.0.0.1:8000/api
 
 ## Estructura del .env
-El backend lee su configuracion desde el archivo [Backend/.env](Backend/.env). Este archivo contiene la configuracion de ejecucion y la conexion a MongoDB.
+El backend lee su configuracion desde el archivo [Backend/.env](Backend/.env). Este archivo contiene la configuracion de ejecucion y la conexion a MongoDB, importante colocarlo dentro de la carpeta de Backend
 
 Variables esperadas:
 - `app_name`: nombre de la aplicacion.
